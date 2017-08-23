@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>教材征订管理系统</title>
+    <meta name="description" content=""/>
+    <meta name="keywords" content=""/>
+    <meta name="robots" content=""/>
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" href="/static/css/indexstyle.css" media="all"/>
+</head>
+<body>
+<div class="testing">
+    <header class="main">
+        <h1><strong>教材征订</strong>管理系统</h1>
+        <input type="text" value="search"/>
+    </header>
+    <section class="user">
+        <div class="profile-img">
+            <p><img src="/static/images/hfutlabel.jpg" alt="" height="40" width="40"/> Welcome back {{ username }}</p>
+        </div>
+        <div class="buttons">
+            <button class="ico-font">&#9206;</button>
+            <span class="button dropdown">
+			<a href="">通知<span class="pip">2</span></a>
+			<ul class="notice">
+				<li>
+					<hgroup>
+						<h1>你有新的任务</h1>
+						<h2>库存管理</h2>
+					</hgroup>
+				</li>
+				<li>
+					<hgroup>
+						<h1>进行库存管理</h1>
+					</hgroup>
+				</li>
+			</ul>
+		</span>
+            <span class="button dropdown">
+			<a href="http://www.baidu.com">帮助</a>
+			<ul class="notice">
+				<li>
+					<hgroup>
+						<h1>有任何问题<br>请与系统管理员联系</h1>
+						<h2>Admin</h2>
+						<h3>联系方式：<br>hhh123@163.com</h3>
+					</hgroup>
+				</li>
+			</ul>
+		</span>
+            <span class="button blue"><a href="/users/logout/">退出</a></span>
+        </div>
+    </section>
+</div>
+<nav>
+    <ul>
+        <li class="section"><a href="http://www.hfut.edu.cn/ch/"><span class="icon">&#128711;</span> 合肥工业大学</a></li>
+        <li>
+            <a href="/operations/bookinfo"><span class="icon">&#128196;</span>教材征订表</a>
+            <ul class="submenu">
+                <li><a href="/operations/add/">增加信息</a></li>
+                <li><a href="/operations/delete/">删除信息</a></li>
+                <li><a href="/operations/bookinfo/">查看信息</a></li>
+                <li><a href="/operations/update/">修改信息</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#"><span class="icon">&#9881;</span> 教材库存管理 </a>
+            <ul class="submenu">
+                <li><a href="#">增加信息</a></li>
+                <li><a href="#">删除信息</a></li>
+                <li><a href="#">查看信息</a></li>
+                <li><a href="#">修改信息</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#"><span class="icon">&#9881;</span> 教材购买管理 </a>
+            <ul class="submenu">
+                <li><a href="#">增加信息</a></li>
+                <li><a href="#">删除信息</a></li>
+                <li><a href="#">查看信息</a></li>
+                <li><a href="#">修改信息</a></li>
+            </ul>
+        </li>
+{#        <li><a href="/xadmin"><span class="icon">&#128202;</span>系统维护</a></li>#}
+        <li><a href="/users/psinfo/"><span class="icon">&#128101;</span> 个人信息 </a></li>
+        <li>
+            <a href="/userinfo/"><span class="icon">&#59160;</span> 留言信息 <span class="pip">3</span></a>
+        </li>
+    </ul>
+</nav>
+<section class="alert">
+    <div class="green">
+        <p>Hi {{ username }}, you have <a href="#">3 new pages</a>to approve, better get going!</p>
+        <span class="close">&#10006;</span>
+    </div>
+</section>
+<section class="content">
+    <section class="widget">
+        <header>
+            <span class="icon">&#128200;</span>
+            <hgroup>
+                <h1>Website Statistics</h1>
+                <h2>An insiders view</h2>
+            </hgroup>
+            <aside>
+                <button class="left-btn">&#59229;</button>
+                <button class="right-btn">&#59230;</button>
+            </aside>
+        </header>
+        <div class="content cycle">
+            <div id="flot-example-2" class="graph-area"></div>
+            <div id="flot-example-1" class="graph-area"></div>
+        </div>
+    </section>
+    <div class="widget-container">
+        <div style="height:80px">
+            Copyright &copy; 2017 合肥工业大学
+        </div>
+    </div>
+</section>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+<script src="/static/js/jquery.wysiwyg.js"></script>
+<script src="/static/js/custom.js"></script>
+<script src="/static/js/cycle.js"></script>
+<script src="/static/js/jquery.checkbox.min.js"></script>
+<script src="/static/js/flot.js"></script>
+<script src="/static/js/flot.resize.js"></script>
+<script src="/static/js/flot-time.js"></script>
+<script src="/static/js/flot-pie.js"></script>
+<script src="/static/js/flot-graphs.js"></script>
+<script src="/static/js/cycle.js"></script>
+<script src="/static/js/jquery.tablesorter.min.js"></script>
+<script type="text/javascript">
+    // Feature slider for graphs
+    $('.cycle').cycle({
+        fx: "scrollHorz",
+        timeout: 0,
+        slideResize: 0,
+        prev: '.left-btn',
+        next: '.right-btn'
+    });
+</script>
+</body>
+</html>

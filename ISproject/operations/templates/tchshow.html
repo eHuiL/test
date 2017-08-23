@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>教材订单表</title>
+</head>
+<body>
+<div>
+    <table border="1">
+        <thead>
+        <tr>
+            <th>编号</th>
+            <th>课程号</th>
+            <th>数量</th>
+            <th>学期</th>
+            <th>专业</th>
+        </tr>
+        </thead>
+        <tbody>
+        <form method = 'post' enctype="multipart/form-data">
+        {% for book in  book_list %}
+                <tr>
+                    <td> <input type="text" value="{{ book.Number }}" readOnly=true/></td>
+                    <td> <input type="text" value="{{ book.CourseID }}" readOnly=true/></td>
+                    <td> <input type="text" value="{{ book.Amount }}" readOnly=true/></td>
+                    <td> <input type="text" value="{{ book.Term }}" readOnly=true/></td>
+                    <td> <input type="text" value="{{ book.Major }}" readOnly=true/></td>
+                </tr>
+        {% endfor %}
+        </form>
+        </tbody>
+    </table>
+    <a href="/users/index/">返回</a>
+    <a href="/operations/add/">增加</a>
+</div>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>查看书目</title>
+</head>
+<body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>教材订单表</title>
+</head>
+<body>
+<div>
+    <table border="1">
+        <thead>
+        <tr>
+            <th>编号</th>
+            <th>书名</th>
+            <th>出版社</th>
+            <th>作者</th>
+            <th>版次</th>
+            <th>单价</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for book in  books_list %}
+            <tr>
+                <td>{{ book.Number }}</td>
+                <td>{{ book.Bookname }}</td>
+                <td>{{ book.Press }}</td>
+                <td>{{ book.Author}}</td>
+                <td>{{ book.Edition }}</td>
+                <td>{{ book.Price }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <a href="/users/index/">返回</a>
+</div>
+</body>
+</html>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<form method = 'post' enctype="multipart/form-data">
+    {% csrf_token %}
+    <input type="hidden" name="id" value="{{ bi }}" />
+    编号：<input name="bookid" type="text" value="{{ bi }}" readOnly=true><br/>
+    课程号：<input name="courseid" type="text"><br/>
+    数量：<input name="booknumber" type="text"><br/>
+    学期：<input name="term" type="text" ><br/>
+    专业：<input name="major" type="text" ><br/>
+    <input type="submit" value = "确定" onclick="closewin()" />
+</form>
+
+<script>
+    function closewin() {
+        window.close();
+        window.open("/operations/bookinfo",true);
+
+    }
+</script>
+</body>
+</html>

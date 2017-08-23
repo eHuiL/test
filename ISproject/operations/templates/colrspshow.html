@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>教材订单表</title>
+</head>
+<body>
+<div>
+    <table border="1">
+        <thead>
+        <tr>
+            <th>编号</th>
+            <th>课程号</th>
+            <th>数量</th>
+            <th>学期</th>
+            <th>专业</th>
+            <th>操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for book in  book_list %}
+            <form method = 'post' enctype="multipart/form-data">
+                <tr>
+                    <input type="hidden" value="{{  book.Number }}" name="id"/>
+                    <td> <input type="text" value="{{ book.Number }}" readOnly=true/></td>
+                    <td> <input type="text" value="{{ book.CourseID }}" readOnly=true/></td>
+                    <td> <input type="text" value="{{ book.Amount }}" readOnly=true/></td>
+                    <td> <input type="text" value="{{ book.Term }}" readOnly=true/></td>
+                    <td> <input type="text" value="{{ book.Major }}" readOnly=true/></td>
+                    <td> <input onclick="openwin()" type="submit" value="修改"/> </td>
+                    <td> <input onclick="del()" formaction="/operations/delete/" type="submit" value="删除"/> </td>
+                </tr>
+            </form>
+        {% endfor %}
+        </tbody>
+    </table>
+    <a href="/users/index/">返回</a>
+    <a href="/operations/update/">修改</a>
+    <a href="/operations/add/">增加</a>
+    <a href="/operations/delete">删除</a>
+</div>
+<script>
+    function openwin(){
+        window.open("/operations/update", "修改",
+            "height=200, width=400, left=500,top=300,toolbar=no,menubar=no," +
+            " scrollbars=no, resizable=no, location=no, status=no");
+    }
+    function del(){
+        window.location.reload();
+    }
+</script>
+</body>
+</html>
